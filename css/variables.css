@@ -1,0 +1,13 @@
+:root {
+  --primary-theme-color: #e9d310;
+  --secondary-theme-color: #2b2b2b;
+  --tertiary-theme-color: rgb(17, 14, 14);
+  --primary-font-color: #fff;
+  --primary-box-shadow: 0 0 1.5rem #e9d31046;
+  --max-width-container: 1024px;
+  --primary-font-family: 'Poppins', sans-serif;
+  --padding-container: 0 1rem;  
+  --primary-all-transitions: all 0.25s ease-in-out;
+  --primary-font-size-title: 2.3rem;
+  --primary-font-size-title-media: 3.5rem;
+}

@@ -332,11 +332,11 @@ function ej15_edad (a){
   {
       if(a > 17)
       {
-          return "¡Puedes votar!";
+          return "Puedes votar en las próximas elecciones.";
       }
       else
       {
-          return "Aún no tienes la edad suficiente para votar."
+          return "Lo siento, aún no tienes la edad suficiente para votar."
       }
   }
 }

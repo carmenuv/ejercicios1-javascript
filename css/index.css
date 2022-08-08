@@ -1,0 +1,126 @@
+@import '../css/variables.css';
+
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.body{
+  background-image: url("../img/bg-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: var(--primary-font-family);
+  overflow: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__container {
+  padding: var(--padding-container);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: var(--max-width-container);
+}
+
+.hero__info-container {
+  margin: 0;
+}
+
+.hero__info-title {
+  text-align: center;
+  color: var(--primary-font-color);
+  font-size: var(--primary-font-size-title);
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
+.hero__info-title-highlight {
+  color: var(--primary-theme-color);
+}
+
+.hero__button-container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__button-box-container {
+  position: relative;
+  border: none;
+  border-radius: 5rem;
+  width: 8rem;
+  height: 8rem;
+  background-color: var(--tertiary-theme-color);
+  color: var(--primary-font-color);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: var(--primary-all-transitions);
+}
+
+.hero__button-box-container:hover{
+  box-shadow: var(--primary-box-shadow);
+}
+
+
+.hero__button-box-container::after {
+  content: '';
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  background-image: conic-gradient(transparent, transparent, transparent, var(--primary-theme-color));
+  animation: animate 4s linear infinite;
+  animation-delay: 2s;
+}
+
+.hero__button-box-container::before {
+  content: '';
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  background-image: conic-gradient(transparent, transparent, transparent, var(--primary-theme-color));
+  animation: animate 4s linear infinite;
+}
+
+.hero__button-box {
+  position: absolute;
+  inset: 5px;
+  border-radius: 5rem;
+  background-color: var(--secondary-theme-color);
+  z-index: 1;
+}
+.hero__button {
+  color: #fff;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  z-index: 2;
+  text-transform: uppercase;
+  width: 8rem;
+  height: 8rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+}
+
+@media (min-width: 854px){
+  .hero__info-title {
+    font-size: var(--primary-font-size-title-media);
+  }
+}

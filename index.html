@@ -4,20 +4,33 @@
   <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ejercicios con javascript</title>
-  <link rel="stylesheet" href="index.css"/>
+  <title>Ejercicios con Javascript</title>
+  <link rel="stylesheet" href="./css/index.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
 </head>
 
 <body class="body">
-  <main class="hero">
-    <div class="hero__container-button">
-      <button class="hero__button" onclick="callMenu()">EJERCICIOS</button>
-    </div>
+  <main>
+    <section class="hero">
+      <div class="hero__container">
+          <header class="hero__info-container">
+            <h1 class="hero__info-title">Ejercicios con <span class="hero__info-title-highlight">Javascript</span></h1>
+          </header>
+          <div class="hero__button-container">
+            <div class="hero__button-box-container">
+              <span class="hero__button-box"></span>
+              <button class="hero__button" onclick="callMenu()">Click</button>
+            </div>
+          </div>
+      </div>
+    </section>
   </main>
-  <script src="./index.js"></script>
+
+  <script src="./js/index.js"></script>
+
 </body>
 
 </html>
