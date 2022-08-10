@@ -73,7 +73,7 @@ function menuEjercicios(nro_ejercicio){
       break;
 
     case 11:
-      let tiemposervicio = parseInt(prompt("Ingresa la cantidad de años que trabaja"));
+      let tiemposervicio = parseInt(prompt("Ingresa la cantidad de años que se encuentra trabajando en la empresa"));
       alert(ej11_bono(tiemposervicio));
     break;
 
@@ -110,8 +110,8 @@ function menuEjercicios(nro_ejercicio){
         alert(ej15_edad(voto));
       break;
 
-        default:
-          alert("No ingresó una opción válida");
+      default:
+        alert("No ingresó una opción válida");
   }
 }
 
@@ -190,7 +190,7 @@ function ej9_edad (a){
 
 
 function ej10_menor(nombre1,edad1,nombre2,edad2,nombre3,edad3){
-  if(nombre1 === " " || isNaN(edad1) || nombre2 === " " || isNaN(edad2) || nombre3 === " " || isNaN(edad3)){
+  if(nombre1 !== typeof "" || isNaN(edad1) || nombre2 !== typeof "" || isNaN(edad2) || nombre3 !== typeof "" || isNaN(edad3)){
     return "Por favor, ingresa un valor válido"
   } else {
     if(edad1 < edad2){
@@ -230,27 +230,27 @@ function ej11_bono(tiemposervicio){
           switch (tiemposervicio) 
           {
               case 1:
-              return `El bono que le corresponde es: $${100}`;
+              return `El bono que le corresponde es de: $${100}`;
 
           case 2:
-              return `El bono que le corresponde es: $${200}`;
+              return `El bono que le corresponde es de: $${200}`;
 
           case 3:
-              return `El bono que le corresponde es: $${300}`;
+              return `El bono que le corresponde es de: $${300}`;
 
           case 4:
-              return `El bono que le corresponde es: $${400}`;
+              return `El bono que le corresponde es de: $${400}`;
 
           case 5:
-              return `El bono que le corresponde es: $${500}`;
+              return `El bono que le corresponde es de: $${500}`;
 
           default:
-              return `El bono que le corresponde es: $${1000}`;
+              return `El bono que le corresponde es de: $${1000}`;
   }
       }
       else
       {
-          return "No ha cumplido con el tiempo establecido para el bono";
+          return "No ha cumplido con el tiempo necesario para el bono";
       }
   }  
 }
@@ -262,7 +262,7 @@ function ej12_sueldoanual()
     for(contador = 0; contador < 6 ; contador++)
     {
         sueldo *= 1.10;
-        texto += `El sueldo del año ${contador+1} es ${sueldo.toFixed(2)} \r\n `;
+        texto += `El salario del profesor en el año ${contador+1} es: $${sueldo.toFixed(2)} \r\n `;
     }
     return texto;
 }
@@ -320,7 +320,7 @@ function ej14_contarlote(colores){
       contador++;
   }
 
-  return `El número de color verde es ${verde}, el número blanco es ${blanco}, el número de color rojo es ${rojo}`;
+  return `El cantidad de focos en color verde es ${verde}, en blanco es ${blanco} y en rojo es ${rojo}`;
 }
 
 function ej15_edad (a){
