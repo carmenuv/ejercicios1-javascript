@@ -95,12 +95,35 @@ function menuEjercicios(nro_ejercicio){
       
       case 14:
         let cantfocos = parseInt(prompt("Ingresa la cantidad total de focos a contabilizar"));
+        if(isNaN(cantfocos) || cantfocos <= 0)
+            {
+                alert("No ingresaste una cantidad de focos.");
+                return;
+            }
+
         let colorfoco = " ";
         let colores = ["blanco","azul"];
         for(contador = 0; contador < cantfocos; contador++)
         {
           colorfoco = prompt(`Escribe si el color del foco ${contador+1} es rojo, verde o blanco `);
-          colores[contador] = colorfoco;
+          colorfoco.toLowerCase();
+          if(colorfoco !== "rojo"){
+            if(colorfoco !== "verde"){
+              if(colorfoco !== "blanco"){
+                alert("no ingresaste un color válido");
+                  return
+                }
+                else {
+                      colores[contador] = colorfoco;
+                    }
+              } else {
+                      colores[contador] = colorfoco;
+                    }
+            }
+            else
+            {
+              colores[contador] = colorfoco;
+            }
         }
         alert(ej14_contarlote(colores));
         break;
@@ -180,10 +203,9 @@ function ej8_dolar (a){
 }
 
 function ej9_edad (a){
-  if(isNaN(a)){
+  if(isNaN(a) || a > (new Date().getFullYear())-18){
     return "Por favor, ingresa valor";
   } else {
-
     return `Tu edad es: ${new Date().getFullYear() - a}`
   }
 }
@@ -297,9 +319,6 @@ function ej13_notasalumnos(listanotas){
 
 function ej14_contarlote(colores){
 
-  if(isNaN(colores)){
-    return "Por favor, ingresa un valor válido.";
-  } else {
     let arraydecolores = ["blanco","azul"];
     arraydecolores = colores;
     let verde = 0;
@@ -307,20 +326,15 @@ function ej14_contarlote(colores){
     let rojo = 0;
     let contador = 0;
 
-    while(contador < arraydecolores.length)
-    {
+    while(contador < arraydecolores.length){
       if(arraydecolores[contador].toString() == "rojo")
       {
           rojo += 1;
       }
-      else
-      {
-          if(arraydecolores[contador].toString() == "verde")
-          {
+      else{
+          if(arraydecolores[contador].toString() == "verde"){
               verde += 1;
-          }
-          else
-          {
+          } else {
               blanco += 1;
           }
       }
@@ -328,7 +342,7 @@ function ej14_contarlote(colores){
     }
 
     return `El cantidad de focos en color verde es ${verde}, en blanco es ${blanco} y en rojo es ${rojo}`;
-    }
+    
   }
 
 
