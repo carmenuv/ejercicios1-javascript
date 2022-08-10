@@ -94,7 +94,7 @@ function menuEjercicios(nro_ejercicio){
       break;
       
       case 14:
-        let cantfocos = parseInt(prompt("Ingresa la cantidad de focos"));
+        let cantfocos = parseInt(prompt("Ingresa la cantidad total de focos a contabilizar"));
         let colorfoco = " ";
         let colores = ["blanco","azul"];
         for(contador = 0; contador < cantfocos; contador++)
@@ -117,7 +117,7 @@ function menuEjercicios(nro_ejercicio){
 
 function ej1_sumarValores(a,b){
   if(isNaN(a) || isNaN(b)){
-    return "Por favor, ingresa un valor válido";
+    return "Por favor, ingresa un valor válido.";
   } else{
     return `La suma es: ${a+b}`;
   }
@@ -125,7 +125,7 @@ function ej1_sumarValores(a,b){
 
 function ej2_calcularPromedio(ex1,ex2,ex3,ex4){
   if(isNaN(ex1) || isNaN(ex2) || isNaN(ex3) || isNaN(ex4)){
-    return "Por favor, ingresa un valor válido";
+    return "Por favor, ingresa un valor válido.";
   } else {
     return `El promedio es: ${(ex1 + ex2 + ex3 + ex4) / 4}`;
   }
@@ -133,7 +133,7 @@ function ej2_calcularPromedio(ex1,ex2,ex3,ex4){
 
 function ej3_areaRectangulo(a,b){
   if(isNaN(a) || isNaN(b)){
-    return "Por favor, ingresa un valor válido";
+    return "Por favor, ingresa un valor válido.";
   } else {
     return `El área del rectángulo es: ${a*b}`;
   }
@@ -141,7 +141,7 @@ function ej3_areaRectangulo(a,b){
 
 function ej4_areaTriangulo(a,b){
   if(isNaN(a) || isNaN(b)){
-    return "Por favor, ingresa un valor válido";
+    return "Por favor, ingresa un valor válido.";
   } else {
     return `El área del triángulo es: ${(a*b) / 2}`;
   }
@@ -149,7 +149,7 @@ function ej4_areaTriangulo(a,b){
 
 function ej5_radio(a){
   if(isNaN(a)){
-    return "Por favor, ingresa un valor válido";
+    return "Por favor, ingresa un valor válido.";
   } else {
     return `El área del círculo es: ${(Math.PI * Math.pow(a, 2)).toFixed(2)}`
   }
@@ -157,7 +157,7 @@ function ej5_radio(a){
 
 function ej6_salario(a,b){
   if(isNaN(a) || isNaN(b)){
-    return "Por favor, ingresa un valor válido";
+    return "Por favor, ingresa un valor válido.";
   } else {
     return `El salario semanal es: ${a*b}`;
   }
@@ -220,7 +220,7 @@ function ej10_menor(nombre1,edad1,nombre2,edad2,nombre3,edad3){
 function ej11_bono(tiemposervicio){
   if(isNaN(tiemposervicio))
   {
-      return "Por favor, ingresa un valor válido";
+      return "Por favor, ingresa un valor válido.";
   }
   else
   {
@@ -269,14 +269,17 @@ function ej12_sueldoanual()
 
 function ej13_notasalumnos(listanotas){
 
-  let arraynotas = [1,2];
-  arraynotas = listanotas;
-  let desaprobados = 0;
-  let aprobados = 0;
-  let contador = 0;
+  if(isNaN(listanotas)){
+    return "Por favor, ingresa un valor válido.";
+  } else {
+    let arraynotas = [1,2];
+    arraynotas = listanotas;
+    let desaprobados = 0;
+    let aprobados = 0;
+    let contador = 0;
 
-  while(contador < arraynotas.length)
-  {
+    while(contador < arraynotas.length)
+    {
       if(arraynotas[contador] < 10)
       {
           desaprobados += 1;
@@ -286,22 +289,26 @@ function ej13_notasalumnos(listanotas){
           aprobados += 1;
       }
       contador++;
-  }
+    }
 
-  return `El numero de desaprobados es ${desaprobados} y el numero de aprobados es ${aprobados}`;
+    return `El número de desaprobados es ${desaprobados} y el número de aprobados es ${aprobados}`;
+  }
 }
 
 function ej14_contarlote(colores){
 
-  let arraydecolores = ["blanco","azul"];
-  arraydecolores = colores;
-  let verde = 0;
-  let blanco = 0;
-  let rojo = 0;
-  let contador = 0;
+  if(isNaN(colores)){
+    return "Por favor, ingresa un valor válido.";
+  } else {
+    let arraydecolores = ["blanco","azul"];
+    arraydecolores = colores;
+    let verde = 0;
+    let blanco = 0;
+    let rojo = 0;
+    let contador = 0;
 
-  while(contador < arraydecolores.length)
-  {
+    while(contador < arraydecolores.length)
+    {
       if(arraydecolores[contador].toString() == "rojo")
       {
           rojo += 1;
@@ -318,15 +325,17 @@ function ej14_contarlote(colores){
           }
       }
       contador++;
+    }
+
+    return `El cantidad de focos en color verde es ${verde}, en blanco es ${blanco} y en rojo es ${rojo}`;
+    }
   }
 
-  return `El cantidad de focos en color verde es ${verde}, en blanco es ${blanco} y en rojo es ${rojo}`;
-}
 
 function ej15_edad (a){
   if(isNaN(a))
   {
-      return "Por favor, ingresa un valor válido";
+      return "Por favor, ingresa un valor válido.";
   }
   else
   {
